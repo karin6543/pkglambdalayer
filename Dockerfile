@@ -1,0 +1,12 @@
+ARG PYTHON_VERSION
+ 
+FROM python:$PYTHON_VERSION
+
+WORKDIR /app
+
+COPY main.py .
+
+ARG DATA_FILE=/data
+WORKDIR $DATA_FILE
+
+ENTRYPOINT ["python", "/app/main.py"]
